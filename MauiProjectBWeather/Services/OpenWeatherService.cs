@@ -14,7 +14,7 @@ namespace MauiProjectBWeather.Services
     public class OpenWeatherService
     {
         readonly HttpClient _httpClient = new HttpClient();
-        readonly string _apiKey = "";
+        readonly string _apiKey = "d11de2c96e160e2d3350ad3db04c75bc";
         readonly string _apiUri = "https://api.openweathermap.org/data/2.5/forecast";
 
         public async Task<Forecast> GetForecastAsync(string City)

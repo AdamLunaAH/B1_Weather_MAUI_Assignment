@@ -19,6 +19,31 @@
                 </ListView.ItemTemplate>
             </ListView>
             -->
+
+            <ListView x:Name="GroupedForecast" IsGroupingEnabled="True" HasUnevenRows="True">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Key}" FontSize="20" TextColor="Yellow" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding DateTime}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding Temperature}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding Description}" FontSize="20" TextColor="White" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+            
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
