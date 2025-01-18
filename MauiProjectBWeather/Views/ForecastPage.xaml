@@ -24,7 +24,7 @@
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Key}" FontSize="20" TextColor="Yellow" />
+                            <Label Text="{Binding Key, StringFormat='Date: {0:D}'}" FontSize="20" TextColor="Yellow" />
                         </ViewCell>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>
@@ -32,18 +32,29 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="{Binding DateTime}" FontSize="20" TextColor="White" />
-                                <Label Text="{Binding Temperature}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding DateTime, StringFormat='Time: {0:HH:mm}'}" FontSize="20" TextColor="White" />
+                                <!--<StackLayout Orientation="Horizontal">-->
+                                <!--<Image Source="{Binding Icon}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" BackgroundColor="AliceBlue"/>-->
+                                <!--<Label Text="{Binding Icon}" />-->
+                                <!--<Image>
+                        <Image.Source>
+                            <UriImageSource Uri="{Binding Icon}" CachingEnabled="True" CacheValidity="1:0:0" />
+                        </Image.Source>
+                    </Image>-->
+                                <!--<StackLayout Orientation="Vertical">-->
                                 <Label Text="{Binding Description}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding Temperature,StringFormat='Temperature: {0}℃'}" FontSize="20" TextColor="White" />
+                                <!--</StackLayout>
+                    </StackLayout>-->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
             </ListView>
-            
-            
-            
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
