@@ -50,7 +50,11 @@ namespace MauiProjectBWeather.Services
                     Temperature = wdle.main.temp,
                     WindSpeed = wdle.wind.speed,
                     Description = wdle.weather.First().description,
-                    Icon = $"https://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
+                    //Icon = $"https://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
+                    //Icon = $"{wdle.weather.First().icon}"
+                    Icon = $"http://openweathermap.org/img/w/{wdle.weather.First().icon}.png"
+
+
                 }).ToList()
             };
             return forecast;
