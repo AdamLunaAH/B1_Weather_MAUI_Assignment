@@ -20,6 +20,20 @@
             </ListView>
             -->
 
+
+            <ContentView WidthRequest="100" HeightRequest="100" Background="LightGray" Margin="5">
+                <Image Source="https://openweathermap.org/img/w/04n.png" HeightRequest="50" WidthRequest="50" Aspect="AspectFit">
+                    <!--<Image.Source>
+            <UriImageSource Uri="https://openweathermap.org/img/w/04n.png"  CachingEnabled="False">
+                
+            </UriImageSource></Image.Source>-->
+                </Image>
+
+            </ContentView>
+
+
+
+
             <ListView x:Name="GroupedForecast" IsGroupingEnabled="True" HasUnevenRows="True">
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
