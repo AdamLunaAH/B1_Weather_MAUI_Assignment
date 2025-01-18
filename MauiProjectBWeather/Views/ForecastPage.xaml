@@ -19,6 +19,64 @@
                 </ListView.ItemTemplate>
             </ListView>
             -->
+
+
+            <!--<Image Source="dotnet_bot.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFit"></Image>
+
+            <Image Source="https://openweathermap.org/img/wn/10d@2x.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFit"></Image>
+
+            <Image Source="https://upload.wikimedia.org/wikipedia/commons/3/39/Czapek60.jpg?20120522153543" WidthRequest="50" HeightRequest="50" Aspect="AspectFit"></Image>
+
+            <Image>
+                <Image.Source>
+                    <UriImageSource Uri="https://openweathermap.org/img/w/09n.png"
+                        CacheValidity="00:00:00:00" />
+                </Image.Source>
+            </Image>-->
+
+
+            <ListView x:Name="GroupedForecast" IsGroupingEnabled="True" HasUnevenRows="True" Margin="20">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Key, StringFormat='Date: {0:D}'}" FontSize="20" TextColor="Yellow" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout> 
+                                <Label Text="{Binding DateTime, StringFormat='Time: {0:HH:mm}'}" FontSize="20" TextColor="White" />
+                                <StackLayout Orientation="Horizontal">
+                                <!--<Image Source="{Binding Icon}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" BackgroundColor="AliceBlue"/>-->
+
+                                <!--Https links dont work-->
+                                <Image Source="{Binding Icon}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />
+
+                                <!--<Image Source="{Binding Icon, StringFormat='http://openweathermap.org/img/w/{0}.png'}" HeightRequest="50" WidthRequest="50" Aspect="AspectFit" />-->
+                                <!--<Label Text="{Binding Icon}" />-->
+                                <!--<Label Text="{Binding Icon, StringFormat='http://openweathermap.org/img/w/{0}.png'}" />-->
+
+                                <!--<Image>
+                        <Image.Source>
+                            <UriImageSource Uri="{Binding Icon}" CachingEnabled="True" CacheValidity="1:0:0" />
+                        </Image.Source>
+                    </Image>-->
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Description}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding Temperature,StringFormat='Temperature: {0}℃'}" FontSize="20" TextColor="White" />
+                                </StackLayout>
+                    </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
