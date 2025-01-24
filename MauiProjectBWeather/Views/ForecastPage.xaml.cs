@@ -36,7 +36,7 @@ namespace MauiProjectBWeather.Views
             base.OnAppearing();
             Title = $"Forecast for {city.Name}";
 
-            MainThread.BeginInvokeOnMainThread(async () => {await LoadForecast();});
+            MainThread.BeginInvokeOnMainThread(async () => await LoadForecast());
         }
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -54,9 +54,9 @@ namespace MauiProjectBWeather.Views
                 Items = forecast.Items.GroupBy(fi => fi.DateTime.Date)
             };
 
-            //ForecastListView.ItemsSource = groupedforecast.Items;
-
+            // Set the ItemsSource of the ListView to the grouped forecast data
             GroupedForecast.ItemsSource = groupedforecast.Items;
         }
     }
+
 }
